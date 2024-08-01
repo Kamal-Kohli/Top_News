@@ -1,7 +1,5 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.decorators import login_required
 from .news_api import get_news
 
 def register(request):
@@ -32,7 +30,6 @@ def user_login(request):
         form = AuthenticationForm()
     return render(request, 'news/login.html', {'form': form})
 
-@login_required
 def home(request):
     country = request.GET.get('country', 'us')
     category = request.GET.get('category', 'general')
@@ -46,5 +43,5 @@ def home(request):
         'country': country,
         'category': category,
         'page': page,
-        'has_more': len(articles) == 20  # True if there might be more articles
+        'has_more': len(articles) == 20 
     })
