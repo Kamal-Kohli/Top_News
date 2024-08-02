@@ -187,7 +187,24 @@ nav ul li a {
     transition: transform 0.3s ease-in-out;
     
 }
+.masthead {
+    background-size: cover;
+    min-height: 85vh;
+    position: relative;
+    
+}
 
+.masthead1 {
+    color: #124e66;
+}
+
+
+.text-overlay {
+    z-index: 1;
+    color: #124e66;
+    background-color: rgba(211, 217, 212, 0.7);
+}
+  
 .floating-icons a:hover {
     background-color: #212a31;
 }
